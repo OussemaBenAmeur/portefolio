@@ -1,0 +1,127 @@
+.section {
+    padding: var(--space-2xl) var(--space-lg);
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.content {
+    position: relative;
+}
+
+.text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-card);
+    border: 1px solid rgba(200, 155, 60, 0.1);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.detailItem:hover {
+    border-color: var(--color-gold);
+    transform: translateX(10px);
+}
+
+.detailIcon {
+    font-size: 1.5rem;
+}
+
+.detailLabel {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 2px;
+}
+
+.detailValue {
+    font-size: 0.9375rem;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.detailValue:hover {
+    color: var(--color-hextech);
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.highlightCard {
+    background: var(--color-bg-card);
+    border: 1px solid rgba(200, 155, 60, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.highlightCard:hover {
+    border-color: var(--color-hextech);
+    box-shadow: var(--glow-hextech);
+    transform: translateY(-5px);
+}
+
+.highlightNumber {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: var(--space-xs);
+}
+
+.highlightText {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .highlights {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlights {
+        grid-template-columns: 1fr;
+    }
+}

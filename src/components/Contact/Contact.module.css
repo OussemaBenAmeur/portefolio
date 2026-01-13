@@ -1,0 +1,120 @@
+.section {
+    padding: var(--space-2xl) var(--space-lg);
+    position: relative;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content {
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: var(--space-md);
+}
+
+.text {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+}
+
+.contactMethods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.contactCard {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-card);
+    border: 1px solid rgba(200, 155, 60, 0.15);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.contactCard:hover {
+    border-color: var(--color-hextech);
+    box-shadow: var(--glow-hextech);
+    transform: translateY(-3px);
+}
+
+.contactIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 205, 255, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.contactIcon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-hextech);
+}
+
+.contactInfo {
+    text-align: left;
+}
+
+.contactLabel {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 2px;
+}
+
+.contactValue {
+    font-size: 0.9375rem;
+    color: var(--color-text-primary);
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--gradient-gold);
+    color: var(--color-bg-primary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-normal);
+}
+
+.ctaButton:hover {
+    box-shadow: var(--glow-gold);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .contactMethods {
+        grid-template-columns: 1fr;
+    }
+}
