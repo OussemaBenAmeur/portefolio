@@ -41,8 +41,10 @@ export default function Home() {
 
         {/* Work Experience timeline */}
         <Experience />
-          {/* Skills with animated progress bars */}
-          <Skills />
+
+        {/* Skills with animated tags */}
+        <Skills />
+
         {/* Academic Projects showcase */}
         <Projects />
 

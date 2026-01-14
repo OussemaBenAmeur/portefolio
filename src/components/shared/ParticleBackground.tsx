@@ -11,12 +11,15 @@ interface Particle {
     speedY: number;
     opacity: number;
     hue: number;
+    baseSpeedX: number;
+    baseSpeedY: number;
 }
 
 export default function ParticleBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const particlesRef = useRef<Particle[]>([]);
     const animationRef = useRef<number>(0);
+    const mouseRef = useRef({ x: -1000, y: -1000 });
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -33,18 +36,34 @@ export default function ParticleBackground() {
         resizeCanvas();
         window.addEventListener("resize", resizeCanvas);
 
-        // Create particles
+        // Mouse tracking
+        const handleMouseMove = (e: MouseEvent) => {
+            mouseRef.current = { x: e.clientX, y: e.clientY };
+        };
+
+        const handleMouseLeave = () => {
+            mouseRef.current = { x: -1000, y: -1000 };
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseleave", handleMouseLeave);
+
+        // Create particles - increased count by ~1.5x
         const createParticles = () => {
             const particles: Particle[] = [];
-            const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+            const particleCount = Math.floor((canvas.width * canvas.height) / 10000);
 
             for (let i = 0; i < particleCount; i++) {
+                const speedX = (Math.random() - 0.5) * 0.5;
+                const speedY = (Math.random() - 0.5) * 0.5;
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     size: Math.random() * 3 + 1,
-                    speedX: (Math.random() - 0.5) * 0.5,
-                    speedY: (Math.random() - 0.5) * 0.5,
+                    speedX,
+                    speedY,
+                    baseSpeedX: speedX,
+                    baseSpeedY: speedY,
                     opacity: Math.random() * 0.5 + 0.2,
                     hue: Math.random() > 0.5 ? 180 : 45, // Cyan or Gold
                 });
@@ -57,8 +76,27 @@ export default function ParticleBackground() {
         // Animation loop
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const mouse = mouseRef.current;
+            const interactionRadius = 200; // Increased radius
+            const interactionStrength = 0.05; // Increased strength
 
             particlesRef.current.forEach((particle) => {
+                // Mouse interaction - subtle attraction/repulsion
+                const dx = mouse.x - particle.x;
+                const dy = mouse.y - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < interactionRadius && distance > 0) {
+                    const force = (interactionRadius - distance) / interactionRadius;
+                    // Gentle push away from cursor
+                    particle.speedX = particle.baseSpeedX - (dx / distance) * force * interactionStrength * 10;
+                    particle.speedY = particle.baseSpeedY - (dy / distance) * force * interactionStrength * 10;
+                } else {
+                    // Gradually return to base speed with damping
+                    particle.speedX += (particle.baseSpeedX - particle.speedX) * 0.02;
+                    particle.speedY += (particle.baseSpeedY - particle.speedY) * 0.02;
+                }
+
                 // Update position
                 particle.x += particle.speedX;
                 particle.y += particle.speedY;
@@ -113,6 +151,8 @@ export default function ParticleBackground() {
 
         return () => {
             window.removeEventListener("resize", resizeCanvas);
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mouseleave", handleMouseLeave);
             cancelAnimationFrame(animationRef.current);
         };
     }, []);

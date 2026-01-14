@@ -15,49 +15,23 @@ export const personalInfo = {
 export const skills = {
   programming: {
     title: "Programming Languages",
-    items: [
-      { name: "Python", level: 95 },
-      { name: "JavaScript/TypeScript", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "C/C++", level: 75 },
-    ],
+    items: ["Python", "JavaScript/TypeScript", "Java", "C/C++"],
   },
   ml: {
     title: "Machine Learning",
-    items: [
-      { name: "PyTorch", level: 90 },
-      { name: "Scikit-Learn", level: 90 },
-      { name: "Deep Learning", level: 85 },
-      { name: "Computer Vision", level: 85 },
-      { name: "NLP", level: 80 },
-    ],
+    items: ["PyTorch", "Scikit-Learn", "Deep Learning", "Computer Vision", "NLP"],
   },
   data: {
     title: "Data & Visualization",
-    items: [
-      { name: "pandas", level: 95 },
-      { name: "NumPy", level: 95 },
-      { name: "Matplotlib/Seaborn", level: 90 },
-    ],
+    items: ["pandas", "NumPy", "Matplotlib/Seaborn"],
   },
   webMobile: {
     title: "Web & Mobile",
-    items: [
-      { name: "React", level: 85 },
-      { name: "Next.js", level: 80 },
-      { name: "Spring Boot", level: 80 },
-      { name: "Flutter", level: 75 },
-    ],
+    items: ["React", "Next.js", "Spring Boot", "Flutter"],
   },
   mlops: {
     title: "MLOps & Tools",
-    items: [
-      { name: "Docker", level: 85 },
-      { name: "Kubernetes", level: 75 },
-      { name: "MLflow", level: 85 },
-      { name: "Git/GitHub", level: 95 },
-      { name: "LangChain", level: 80 },
-    ],
+    items: ["Docker", "Kubernetes", "MLflow", "Git/GitHub", "LangChain"],
   },
 };
 
@@ -155,22 +129,27 @@ export const certifications = [
   {
     name: "Building RAG Agents with LLMs",
     issuer: "NVIDIA",
+    link: "https://learn.nvidia.com/certificates?id=f9dd6bb5f9a34a0d8c5c95c0c80d07e1",
   },
   {
     name: "Machine Learning Specialization",
     issuer: "DeepLearning.AI, Stanford University",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/ML-SPEC",
   },
   {
     name: "Deep Learning Specialization",
     issuer: "DeepLearning.AI",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/DL-SPEC",
   },
   {
     name: "Machine Learning In Production",
     issuer: "DeepLearning.AI",
+    link: "https://www.coursera.org/account/accomplishments/certificate/MLOPS",
   },
   {
     name: "Natural Language Processing",
     issuer: "DeepLearning.AI",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/NLP-SPEC",
   },
 ];
 
@@ -211,19 +190,42 @@ export const languages = [
   { name: "German", level: "B1" },
 ];
 
-export const hobbies = [
+export const interests = [
   {
     name: "Gaming",
-    description: "Participated in and won multiple competitions online and on-site",
+    description: "Competitive gaming enthusiast with multiple online and on-site tournament wins",
+  },
+  {
+    name: "AI Research",
+    description: "Following cutting-edge developments in machine learning and deep learning",
+  },
+  {
+    name: "Open Source",
+    description: "Contributing to and learning from open source projects",
+  },
+  {
+    name: "Tech Communities",
+    description: "Active participant in local tech meetups and online developer communities",
   },
 ];
 
+// Blog posts - empty for now, to be populated later
+export const blogPosts: {
+  title: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+  tags: string[];
+}[] = [];
+
 // Navigation items for the website
 export const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Education", href: "/#education" },
+  { label: "Interests", href: "/interests" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
 ];
