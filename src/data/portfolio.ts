@@ -1,12 +1,8 @@
-// ============================================
-// PORTFOLIO DATA - Edit this file to update your portfolio!
-// ============================================
-
 export const personalInfo = {
   name: "Oussema Ben Ameur",
   title: "Software Engineer & ML Enthusiast",
   tagline: "Crafting intelligent solutions with code and machine learning",
-  about: `Second-year Applied Computer Science Engineering Student at École Nationale d'Ingénieurs de Sousse 
+  about: `Second-year Applied Computer Science Engineering Student at The National School of Engineers in Sousse 
   with a strong passion for Software Development, Machine Learning, and MLOps. I love building 
   solutions that bridge the gap between cutting-edge AI research and production-ready systems.`,
   email: "oussema.benameur@eniso.u-sousse.tn",
@@ -106,7 +102,6 @@ export const projects = [
       "Designed user-friendly interfaces and robust API endpoints",
     ],
     technologies: ["Spring Boot", "React", "Flutter", "LLM", "Fine-tuning"],
-    icon: "✍️",
   },
   {
     title: "Predictive Nutrient Availability Analysis",
@@ -119,7 +114,6 @@ export const projects = [
       "Assessed impact on soil nutrient variability",
     ],
     technologies: ["Python", "Machine Learning", "Time Series", "Satellite Data"],
-    icon: "🌱",
   },
   {
     title: "Play Store Market Predictive Analysis",
@@ -133,7 +127,6 @@ export const projects = [
       "Delivered actionable insights for app developers",
     ],
     technologies: ["Keras", "Deep Learning", "pandas", "NumPy", "Matplotlib"],
-    icon: "📊",
   },
 ];
 
@@ -162,27 +155,22 @@ export const certifications = [
   {
     name: "Building RAG Agents with LLMs",
     issuer: "NVIDIA",
-    icon: "🤖",
   },
   {
     name: "Machine Learning Specialization",
     issuer: "DeepLearning.AI, Stanford University",
-    icon: "📚",
   },
   {
     name: "Deep Learning Specialization",
     issuer: "DeepLearning.AI",
-    icon: "🧠",
   },
   {
     name: "Machine Learning In Production",
     issuer: "DeepLearning.AI",
-    icon: "🚀",
   },
   {
     name: "Natural Language Processing",
     issuer: "DeepLearning.AI",
-    icon: "💬",
   },
 ];
 
@@ -227,7 +215,6 @@ export const hobbies = [
   {
     name: "Gaming",
     description: "Participated in and won multiple competitions online and on-site",
-    icon: "🎮",
   },
 ];
 

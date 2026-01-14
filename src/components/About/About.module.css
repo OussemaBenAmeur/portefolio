@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
-    align-items: center;
+    align-items: start;
 }
 
 .content {
@@ -17,11 +17,12 @@
 }
 
 .text {
-    font-size: 1.125rem;
-    line-height: 1.8;
+    font-size: 1.525rem;
+    line-height: 1.7;
     color: var(--color-text-secondary);
     margin-bottom: var(--space-xl);
 }
+
 
 .details {
     display: flex;
@@ -85,8 +86,8 @@
 }
 
 .highlightCard:hover {
-    border-color: var(--color-hextech);
-    box-shadow: var(--glow-hextech);
+    border-color: var(--color-gold);
+    box-shadow: var(--glow-gold);
     transform: translateY(-5px);
 }
 

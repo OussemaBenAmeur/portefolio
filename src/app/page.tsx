@@ -39,12 +39,10 @@ export default function Home() {
         {/* About Me section */}
         <About />
 
-        {/* Skills with animated progress bars */}
-        <Skills />
-
         {/* Work Experience timeline */}
         <Experience />
-
+          {/* Skills with animated progress bars */}
+          <Skills />
         {/* Academic Projects showcase */}
         <Projects />
 

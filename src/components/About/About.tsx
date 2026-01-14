@@ -20,31 +20,6 @@ export default function About() {
                 >
                     <p className={styles.text}>{personalInfo.about}</p>
 
-                    <div className={styles.details}>
-                        <div className={styles.detailItem}>
-                            <span className={styles.detailIcon}>📍</span>
-                            <div>
-                                <span className={styles.detailLabel}>Location</span>
-                                <span className={styles.detailValue}>{personalInfo.location}</span>
-                            </div>
-                        </div>
-                        <div className={styles.detailItem}>
-                            <span className={styles.detailIcon}>📧</span>
-                            <div>
-                                <span className={styles.detailLabel}>Email</span>
-                                <a href={`mailto:${personalInfo.email}`} className={styles.detailValue}>
-                                    {personalInfo.email}
-                                </a>
-                            </div>
-                        </div>
-                        <div className={styles.detailItem}>
-                            <span className={styles.detailIcon}>📱</span>
-                            <div>
-                                <span className={styles.detailLabel}>Phone</span>
-                                <span className={styles.detailValue}>{personalInfo.phone}</span>
-                            </div>
-                        </div>
-                    </div>
                 </motion.div>
 
                 <motion.div
@@ -63,7 +38,7 @@ export default function About() {
                         <span className={styles.highlightText}>Projects Completed</span>
                     </div>
                     <div className={styles.highlightCard}>
-                        <span className={styles.highlightNumber}>5</span>
+                        <span className={styles.highlightNumber}>5+</span>
                         <span className={styles.highlightText}>Certifications</span>
                     </div>
                     <div className={styles.highlightCard}>
