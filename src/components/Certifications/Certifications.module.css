@@ -1,6 +1,5 @@
 .section {
     padding: var(--space-2xl) var(--space-lg);
-    background: var(--color-bg-secondary);
     position: relative;
 }
 
@@ -31,6 +30,9 @@
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
 }
 
 .card::before {
@@ -93,6 +95,24 @@
 .badgeIcon {
     width: 14px;
     height: 14px;
+}
+
+.linkIndicator {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.card:hover .linkIndicator {
+    opacity: 1;
+}
+
+.linkIcon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-hextech);
 }
 
 @media (max-width: 600px) {

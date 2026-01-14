@@ -22,7 +22,6 @@ export default function Projects() {
                         whileHover={{ y: -10 }}
                     >
                         <div className={styles.cardHeader}>
-                            <span className={styles.icon}>{project.icon}</span>
                             <span className={styles.date}>{project.date}</span>
                         </div>
 

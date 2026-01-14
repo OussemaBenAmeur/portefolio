@@ -12,8 +12,11 @@ export default function Certifications() {
 
             <div className={styles.container}>
                 {certifications.map((cert, index) => (
-                    <motion.div
+                    <motion.a
                         key={index}
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={styles.card}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -21,7 +24,6 @@ export default function Certifications() {
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         whileHover={{ scale: 1.05 }}
                     >
-                        <span className={styles.icon}>{cert.icon}</span>
                         <h3 className={styles.name}>{cert.name}</h3>
                         <span className={styles.issuer}>{cert.issuer}</span>
                         <div className={styles.badge}>
@@ -34,7 +36,18 @@ export default function Certifications() {
                             </svg>
                             Verified
                         </div>
-                    </motion.div>
+                        <span className={styles.linkIndicator}>
+                            <svg viewBox="0 0 24 24" fill="currentColor" className={styles.linkIcon}>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </span>
+                    </motion.a>
                 ))}
             </div>
         </section>
