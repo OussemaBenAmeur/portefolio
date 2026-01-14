@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <section className={styles.hero} id="home">
             {/* Background gradient overlay */}
-            <div className={styles.backgroundOverlay} />
+            {/*<div className={styles.backgroundOverlay} />*/}
 
             {/* Content */}
             <div className={styles.content}>
